@@ -1,0 +1,17 @@
+{
+  "name": "trackfm",
+  "version": "1.0.0",
+  "description": "create last fm tracklist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "jsdom": "^16.6.0",
+    "xmldom": "^0.6.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
