@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400"
+    + ";700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>put something here</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Track.fm</h1>
+    <p id="desc">Generate a kpop album-style graphic with your top ten most
+      played tracks from the last month, six months, or overall.</p>
+    <form action="" method="post" name="info" id="form">
+      Last.fm username: <input type="text" name="user" id="username"/>
+      <br>
+      Time period: <select name="time" id="time">
+        <option value="1month">1 month</option>
+        <option value="6month">6 months</option>
+        <option value="overall">All time</option>
+      </select>
+      <br><br>
+      <input type="button" name="submit" value="Submit" onclick="submitted()"/>
+    </form>
+    <div>
+      <p id="userResponse"></p>
+      <p id="timeResponse"></p>
+    </div>
+    <div>
+      <p id="songs"></p>
+      <p id="artists"></p>
+    </div>
+</body>
+</html>
