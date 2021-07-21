@@ -1,8 +1,18 @@
 body {
-  text-align: center;
   font-family: 'Poppins', sans-serif;
 }
 
-.desc {
+#center {
+  text-align: center;
+}
+
+#desc {
   display: flex;
+  justify-content: center;
+}
+
+#songs {
+  display: flex;
+  text-align: left;
+  justify-content: center;
 }

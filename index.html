@@ -10,10 +10,10 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <h1>Track.fm</h1>
+    <h1 id="center">Track.fm</h1>
     <p id="desc">Generate a kpop album-style graphic with your top ten most
       played tracks from the last month, six months, or overall.</p>
-    <form action="" method="post" name="info" id="form">
+    <form action="" method="post" name="info" id="center">
       Last.fm username: <input type="text" name="user" id="username"/>
       <br>
       Time period: <select name="time" id="time">
@@ -22,15 +22,10 @@
         <option value="overall">All time</option>
       </select>
       <br><br>
-      <input type="button" name="submit" value="Submit" onclick="submitted()"/>
+      <input type="button" name="submit" value="Submit" onclick="getSongs()"/>
     </form>
     <div>
-      <p id="userResponse"></p>
-      <p id="timeResponse"></p>
-    </div>
-    <div>
       <p id="songs"></p>
-      <p id="artists"></p>
     </div>
 </body>
 </html>
