@@ -14,10 +14,10 @@ xhr.onreadystatechange = function () {
 
 const endpoint = new URL("http://ws.audioscrobbler.com/2.0/");
 var params = {
-  method: "user.gettoptracks",
-  user: user,
-  period: time,
-  limit: "10",
+  method: "user.gettopartists",
+  user: "up10ticns",
+  period: "7day",
+  limit: "15",
   api_key: process.env.API_KEY
 };
 
@@ -32,13 +32,7 @@ function topTen(data) {
   var DOMParser = require('xmldom').DOMParser;
   var xmlDoc = new DOMParser().parseFromString(data, "text/xml");
   var names = xmlDoc.documentElement.getElementsByTagName("name");
-  var artists = [], songs = [], count = 0;
-  for (var i = 0; i < names.length; i+=2) {
-    songs[count] = names[i].childNodes[0].nodeValue;
-    artists[count] = names[i + 1].childNodes[0].nodeValue;
-    count++;
-  }
-  for (var i = 0; i < 10; i++) {
-    console.log((i + 1) + ". " + songs[i] + " by " + artists[i]);
+  for (var i = 0; i < names.length; i++) {
+    console.log(names[i].childNodes[0].nodeValue);
   }
 }

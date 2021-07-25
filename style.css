@@ -1,5 +1,11 @@
 body {
+  text-align: center;
   font-family: 'Poppins', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #center {
@@ -11,8 +17,37 @@ body {
   justify-content: center;
 }
 
-#songs {
-  display: flex;
-  text-align: left;
-  justify-content: center;
+.container {
+  width: 50vw;
+  height: 50vh;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Merriweather', serif;
+  display: none;
+}
+
+.three {
+  position: absolute;
+  width: 13vw;
+  max-height: 5vw;
+  word-wrap: break-word;
+  top: 8vw;
+  left: 3vw;
+  background-color: #ff7070;
+  color: white;
+  font-size: 1vw;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+
+.other {
+  position: absolute;
+  width: 13vw;
+  height: 6vw;
+  word-wrap: break-word;
+  overflow: hidden;
+  top: 12vw;
+  left: 3vw;
+  color: black;
+  font-size: 1vw;
 }

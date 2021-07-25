@@ -5,14 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400"
     + ";700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300"
+    + "&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>put something here</title>
     <script src="script.js"></script>
   </head>
   <body>
-    <h1 id="center">Track.fm</h1>
-    <p id="desc">Generate a kpop album-style graphic with your top ten most
-      played tracks from the last month, six months, or overall.</p>
+    <h1 id="center">Paimon.fm</h1>
+    <p id="desc">Generate a Genshin Impact Wish banner based on your
+    most-played artists from the past month, six months, or all time
+    according to Last.fm.</p>
     <form action="" method="post" name="info" id="center">
       Last.fm username: <input type="text" name="user" id="username"/>
       <br>
@@ -24,8 +28,14 @@
       <br><br>
       <input type="button" name="submit" value="Submit" onclick="getSongs()"/>
     </form>
-    <div>
-      <p id="songs"></p>
+    <div class="container" id="results">
+      <div id="bg"></div>
+      <div class="three" id="color">
+        <p id="topThree"></p>
+      </div>
+      <div class="other">
+        <p id="rest"></p>
+      </div>
     </div>
 </body>
 </html>

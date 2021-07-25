@@ -8,15 +8,15 @@ function getSongs() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       data = xhr.responseText;
       topTen(data);
-      }
+    }
   };
 
   const endpoint = new URL("http://ws.audioscrobbler.com/2.0/");
   var params = {
-    method: "user.gettoptracks",
+    method: "user.gettopartists",
     user: user,
     period: time,
-    limit: "10",
+    limit: "15",
     api_key: "bb6fe7de42275bee541146a3a1b84ece"
   };
 
@@ -27,17 +27,31 @@ function getSongs() {
 
   function topTen(data) {
     var xmlDoc = new DOMParser().parseFromString(data, "text/xml");
-    var names = xmlDoc.documentElement.getElementsByTagName("name");
-    var artists = [], songs = [], count = 0;
-    for (var i = 0; i < names.length; i+=2) {
-      songs[count] = names[i].childNodes[0].nodeValue;
-      artists[count] = names[i + 1].childNodes[0].nodeValue;
-      count++;
+    var artists = xmlDoc.documentElement.getElementsByTagName("name");
+    for (var i = 0; i < 3; i++) {
+      document.getElementById("topThree").innerHTML +=
+        (artists[i].childNodes[0].nodeValue + "! ");
     }
-    for (var i = 0; i < 10; i++) {
-      document.getElementById("songs").innerHTML +=
-        ((i + 1) + ". " + songs[i] + " by " + artists[i] + "<br>");
+    for (var i = 3; i < 15; i++) {
+      document.getElementById("rest").innerHTML +=
+        (artists[i].childNodes[0].nodeValue + "! ");
     }
+    var img;
+    switch(time) {
+      case "1month":
+        img = '<img src="paimon_month.png"/>';
+        document.getElementById("color").style.backgroundColor = "#ff7070";
+        break;
+      case "6month":
+        img = '<img src="paimon_6month.png"/>';
+        document.getElementById("color").style.backgroundColor = "#68abff";
+        break;
+      case "overall":
+        img = '<img src="paimon_alltime.png"/>';
+        document.getElementById("color").style.backgroundColor = "#c3a501";
+        break;
+    }
+    document.getElementById("bg").innerHTML = img;
+    document.getElementById("results").style.display = "block";
   }
-
 }
