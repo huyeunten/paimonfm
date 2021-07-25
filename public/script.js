@@ -28,6 +28,10 @@ function getSongs() {
   function topTen(data) {
     var xmlDoc = new DOMParser().parseFromString(data, "text/xml");
     var artists = xmlDoc.documentElement.getElementsByTagName("name");
+    if (artists[0].childNodes[0].nodeValue == null) {
+      document.getElementById("error").innerHTML = "Something went wrong" +
+      " getting artists.";
+    }
     for (var i = 0; i < 3; i++) {
       document.getElementById("topThree").innerHTML +=
         (artists[i].childNodes[0].nodeValue + "! ");
@@ -50,6 +54,10 @@ function getSongs() {
         img = '<img src="paimon_alltime.png"/>';
         document.getElementById("color").style.backgroundColor = "#c3a501";
         break;
+    }
+    if (img == null) {
+      document.getElementById("error").innerHTML = "Something went wrong" +
+      " displaying images.";
     }
     document.getElementById("bg").innerHTML = img;
     document.getElementById("results").style.display = "block";
