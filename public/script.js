@@ -11,7 +11,7 @@ function getSongs() {
     }
   };
 
-  const endpoint = new URL("http://ws.audioscrobbler.com/2.0/");
+  const endpoint = new URL("https://ws.audioscrobbler.com/2.0/");
   var params = {
     method: "user.gettopartists",
     user: user,
